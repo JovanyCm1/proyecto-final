@@ -16,8 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.proyecto_final.model.Task;
 import com.example.proyecto_final.service.TaskService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/api/tasks")
+@Tag(name = "Tareas", description = "API para la gestión de tareas")
 public class TaskController {
 
     private final TaskService service;
@@ -27,27 +31,32 @@ public class TaskController {
     }
 
     @GetMapping
+    @Operation(summary = "Listar todas las tareas", description = "Obtiene una lista de todas las tareas")
     public List<Task> listAll() {
         return service.findAll();
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Obtener una tarea", description = "Obtiene una tarea específica por su ID")
     public Task getOne(@PathVariable Integer id) {
         return service.findById(id);
     }
 
     @PostMapping
+    @Operation(summary = "Crear una tarea", description = "Crea una nueva tarea")
     public ResponseEntity<Task> create(@RequestBody Task task) {
         Task created = service.create(task);
         return ResponseEntity.created(URI.create("/tasks/" + created.getId())).body(created);
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Actualizar una tarea", description = "Actualiza una tarea existente")
     public Task update(@PathVariable Integer id, @RequestBody Task task) {
         return service.update(id, task);
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Eliminar una tarea", description = "Elimina una tarea por su ID")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
