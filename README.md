@@ -1,7 +1,7 @@
 # Proyecto Final - TASK MANAGER API
 Este proyecto es una API REST para la gestión de tareas, desarrollada con Spring Boot y utilizando MySQL como base de datos. La API permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las tareas.
 ## 🧩Implementación de JWT
-> 🔐 La implementación del sistema **JWT (JSON Web Token)** se encuentra disponible en la rama **`jwt`**, la cual incluye todo el contenido del repositorio principal junto con la integración completa de **autenticación y autorización mediante JWT**.
+> 🔐 La implementación del sistema **JWT (JSON Web Token)** se encuentra disponible en la rama **`jwt`**, la cual incluye todo el contenido del repositorio principal junto con la integración completa de **autenticación y autorización mediante JWT** y de igual manera, se encuentra la documentación del proyecto con JWT.
 ## Características
 - Crear, leer, actualizar y eliminar tareas.
 - Documentación automática de la API con Swagger/OpenAPI.
