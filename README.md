@@ -70,3 +70,36 @@ A continuación se muestran las capturas del funcionamiento y la documentación 
 
 
 <img width="1604" height="879" alt="image" src="https://github.com/user-attachments/assets/bb38d691-9b6e-4cbc-921c-df37632464aa" />
+
+
+---
+
+## 🔐 Autenticación y Registro de Usuarios
+> En esta sección se muestra la implementación y prueba de los endpoints relacionados con la autenticación mediante **JWT (JSON Web Token)**.  
+> La API permite registrar nuevos usuarios y posteriormente autenticarlos para obtener su token de acceso.
+
+---
+
+### 🟩 POST `/api/auth/register`
+> Endpoint para **registrar un nuevo usuario** en el sistema.  
+> Recibe un cuerpo JSON con los campos `username`, `password` y `role`.  
+> Devuelve una respuesta con los datos del usuario creado y un token JWT de autenticación.
+
+<img width="1919" height="2591" alt="POST - Registro Usuario" src="https://github.com/user-attachments/assets/553f4b5b-54a1-441c-81aa-5367412ee79a" />
+
+---
+
+### 🟦 POST `/api/auth/login` (Credenciales Correctas)
+> Permite **autenticar un usuario existente**.  
+> Si las credenciales son válidas, devuelve un **token JWT** que permitirá acceder a los endpoints protegidos de la API.
+
+<img width="1911" height="2704" alt="POST - Login con correctas credenciales" src="https://github.com/user-attachments/assets/eca15065-2766-4df9-b2e4-a2e4f71a3c06" />
+
+---
+
+### 🔴 POST `/api/auth/login` (Credenciales Incorrectas)
+> En caso de proporcionar credenciales inválidas, la API devuelve un **código 403 (Forbidden)**.  
+> Esto confirma que la autenticación fue rechazada correctamente.
+
+<img width="1907" height="2389" alt="POST - Login con erroneas credenciales" src="https://github.com/user-attachments/assets/8573e94f-e994-458c-b879-94bb5904a3e3" />
+
